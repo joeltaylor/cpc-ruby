@@ -1,7 +1,9 @@
 require "bundler/setup"
 require "cpc"
+require 'require_all'
 
 RSpec.configure do |config|
+  require_all 'lib'
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
 
