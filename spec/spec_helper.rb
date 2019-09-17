@@ -6,7 +6,7 @@ require 'figaro'
 
 RSpec.configure do |config|
   # Require all files in lib folder
-  require_all 'lib'
+  # require_all 'lib'
 
   # Make sensitive variables from Figaro available
   Figaro.application = Figaro::Application.new(environment: "development", path: "config/application.yml")
