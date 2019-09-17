@@ -1,9 +1,17 @@
 require "bundler/setup"
 require "cpc"
 require 'require_all'
+require 'pry'
+require 'figaro'
 
 RSpec.configure do |config|
+  # Require all files in lib folder
   require_all 'lib'
+
+  # Make sensitive variables from Figaro available
+  Figaro.application = Figaro::Application.new(environment: "development", path: "config/application.yml")
+  Figaro.load
+
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
 
