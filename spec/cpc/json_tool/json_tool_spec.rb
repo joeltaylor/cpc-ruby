@@ -1,7 +1,6 @@
-require "spec_helper"
+require 'spec_helper'
 
-RSpec.describe Cpc::JsonTool do
-  include Cpc::DataParser
+RSpec.describe Cpc::JsonTool::JsonTool do
   let(:json_file_path) { 'spec/fixtures/sample.json' }
 
   it "should parse JSON and classify a Hash" do
