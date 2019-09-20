@@ -3,6 +3,7 @@ require "cpc"
 require 'require_all'
 require 'pry'
 require 'figaro'
+require 'clipboard'
 
 RSpec.configure do |config|
   # Require all files in lib folder
