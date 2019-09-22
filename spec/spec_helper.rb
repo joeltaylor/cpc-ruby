@@ -1,6 +1,7 @@
 require "bundler/setup"
 require "cpc"
 require 'require_all'
+require 'csv'
 require 'pry'
 require 'figaro'
 require 'clipboard'

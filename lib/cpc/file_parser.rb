@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Cpc
   module FileParser
     def parse_json_file(json_file_path)
@@ -16,8 +18,18 @@ module Cpc
       CSV.read(csv_file_path, headers: true, header_converters: :symbol)
     end
 
-    def parse_xlsx_file(xlsx_file_path)
+    def parse_xlsx_file(_xlsx_file_path)
       Roo::Spreadsheet.open('./new_prices.xlsx')
+    end
+
+    def valid_json?(filepath)
+      begin
+        JSON.parse(File.read(filepath))
+        return true
+      rescue JSON::ParserError => e
+        puts e
+        return false
+      end
     end
   end
 end
