@@ -30,6 +30,11 @@ RSpec.describe Cpc::StringManipulator do
   it "should generate a sql query string from a template with parameters" do
     sql_req_str = mysql_query(sql_template_filepath, sql_params_hsh)
     sql_template_populated = File.read(sql_template_populated_filepath)
+
+    f = File.open(sql_query_output_filepath, 'w')
+    f.write(sql_req_str)
+    f.close
+
     expect(sql_req_str).to eq(sql_template_populated)
   end
 
