@@ -3,14 +3,14 @@ require 'spec_helper'
 RSpec.describe Cpc::StringManipulator do
   include Cpc::StringManipulator
 
+  let(:snake) { 'this_is_a_string' }
+  let(:pascal) { 'ThisIsAString' }
+  let(:camel) { 'thisIsAString' }
+  let(:kebab) { 'this-is-a-string' }
   let(:downcase) { 'this is a string' }
   let(:upcase) { 'THIS IS A STRING' }
   let(:capitalized) { "This is a string" }
   let(:title) { "This Is A String" }
-  let(:snake) { 'this_is_a_string' }
-  let(:camel) { 'thisIsAString' }
-  let(:kebab) { 'this-is-a-string' }
-  let(:pascal) { 'ThisIsAString' }
 
   let(:sql_params_hsh) do
     {
@@ -38,7 +38,21 @@ RSpec.describe Cpc::StringManipulator do
     expect(sql_req_str).to eq(sql_template_populated)
   end
 
-  it "should convert PascalCale to snake_case" do
+  it 'should convert camelCase to snake_case' do
+    expect(camel_to_snake(camel)).to eq(snake)
+  end
+
+  it "should convert PascalCase to snake_case" do
     expect(pascal_to_snake(pascal)).to eq(snake)
   end
+
+  it 'should identify whether a string is snake_case' do
+    expect(snake_case?(snake)).to eq(true)
+    expect(snake_case?(pascal)).to eq(false)
+    expect(snake_case?(camel)).to eq(false)
+    expect(snake_case?(kebab)).to eq(false)
+    expect(snake_case?('THIS_IS_A_STRING')).to eq(false)
+  end
+
+
 end

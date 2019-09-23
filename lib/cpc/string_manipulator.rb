@@ -6,13 +6,34 @@ module Cpc
       sql_template_txt
     end
 
-    def pascal_to_snake(pascal_str)
-      pascal_str.gsub(/[A-Z]/) do
-        if $1 == $1
-          puts $1
-        end
-      end
-      # convert pascal_str to snake_case
+    def split_join(str, split_str, delimiter_str)
+      sans_split_str = str.split.join(delimiter_str)
+      with_split_str = str.split(split_str).join(delimiter_str)
+      split_str.nil? ? sans_split_str : with_split_str
     end
+
+    def camel_to_snake(str)
+      str.gsub(/[A-Z]/) { |s| [ "_", s.downcase].join }
+    end
+
+    def pascal_to_snake(str)
+      camel_to_snake(str).sub('_', '')
+    end
+
+    def match_scan_split(str, case_str, delimiter_str)
+      
+    end
+
+    def snake_case?(str)
+      scan = str.scan(/[a-z]/).join
+      split = str.split('_').join
+      scan == split
+    end
+
+    def kebab_case?(str)
+
+    end
+
+
   end
 end
