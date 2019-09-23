@@ -1,5 +1,5 @@
 module Cpc
-  module StringManipulator
+  module MyStrings
     def mysql_query(sql_template_filepath, sql_params_hsh)
       sql_template_txt = File.read(sql_template_filepath)
       sql_params_hsh.each { |k, v| sql_template_txt.gsub!(k.to_s.upcase, v) }
@@ -39,7 +39,5 @@ module Cpc
       not_camel_case = snake_case?(str) || str[0] != str[0].downcase
       not_camel_case ? false : snake_case?(camel_to_snake(str))
     end
-
-
   end
 end

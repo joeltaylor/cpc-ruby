@@ -1,5 +1,5 @@
 RSpec.describe Cpc do
-  include Cpc::Classifier
+  include Cpc::MyStructuredData::Classifier
   let(:json_file_path) { 'spec/fixtures/sample.json' }
   let(:hsh_ary_hsh) { {a: [{ a1: "hello", a2: "world" }, { a3: "hello", a4: "world" }], b: [{ b1: "hello", b2: "world" }, { b3: "hello", b4: "world" }]} }
   let(:hsh_ary) { [{ a: "hello", b: "world" }, { a: "hello", b: "world" }] }

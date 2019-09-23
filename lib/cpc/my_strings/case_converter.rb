@@ -1,7 +1,7 @@
 module Cpc
-  module StringTool
-    class StringConverter
-      include StringManipulator
+  module MyStrings
+    module CaseConverter
+      include MyStrings
 
       def kebab_to_snake(str)
         split_join(str, '-', '_')

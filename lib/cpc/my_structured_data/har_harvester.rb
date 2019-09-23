@@ -1,5 +1,5 @@
 module Cpc
-  module TransformationTool
+  module MyStructuredData
     class HarHarvester
       include FileParser
       include Classifier

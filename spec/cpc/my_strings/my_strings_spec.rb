@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-RSpec.describe Cpc::StringManipulator do
-  include Cpc::StringManipulator
+RSpec.describe Cpc::MyStrings do
+  include Cpc::MyStrings
 
   let(:snake) { 'this_is_a_string' }
   let(:pascal) { 'ThisIsAString' }

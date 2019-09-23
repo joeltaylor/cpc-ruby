@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Cpc::TransformationTool::HarHarvester do
+RSpec.describe Cpc::MyStructuredData::HarHarvester do
 
   let(:har_filepath) { 'spec/fixtures/sample.har' }
 

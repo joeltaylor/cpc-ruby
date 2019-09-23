@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-RSpec.describe Cpc::DataGenerator do
-  include Cpc::DataGenerator
-  include Cpc::FileParser
+RSpec.describe Cpc::MyStructuredData::DataGenerator do
+  include Cpc::MyStructuredData::DataGenerator
+  include Cpc::MyStructuredData::FileParser
 
   let(:hsh) { {hello: 'world', greetings: 'earth', salutations: 'planet'} }
   let(:ary_hsh_filepath) { 'spec/fixtures/json_for_csv.json' }

@@ -1,6 +1,7 @@
 require 'spec_helper'
 
-RSpec.describe Cpc::StringTool::StringConverter do
+RSpec.describe Cpc::MyStrings::CaseConverter do
+  include Cpc::MyStrings::CaseConverter
   let(:snake) { 'this_is_a_string' }
   let(:pascal) { 'ThisIsAString' }
   let(:camel) { 'thisIsAString' }
@@ -11,23 +12,23 @@ RSpec.describe Cpc::StringTool::StringConverter do
   let(:title) { "This Is A String" }
 
   it "should convert kebab-case to snake_case" do
-    expect(subject.kebab_to_snake(kebab)).to eq(snake)
+    expect(kebab_to_snake(kebab)).to eq(snake)
   end
 
   it 'should convert downcase to snake_case' do
-    expect(subject.downcase_to_snake(downcase)).to eq(snake)
+    expect(downcase_to_snake(downcase)).to eq(snake)
   end
 
   it 'should convert upcase to snake_case' do
-    expect(subject.upcase_to_snake(upcase)).to eq(snake)
+    expect(upcase_to_snake(upcase)).to eq(snake)
   end
 
   it 'should convert capitalized to snake_case' do
-    expect(subject.capitalized_to_snake(capitalized)).to eq(snake)
+    expect(capitalized_to_snake(capitalized)).to eq(snake)
   end
 
   it 'should convert title to snake_case' do
-    expect(subject.title_to_snake(title)).to eq(snake)
+    expect(title_to_snake(title)).to eq(snake)
   end
 
 end

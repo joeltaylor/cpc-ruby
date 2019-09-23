@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-RSpec.describe Cpc::FileParser do
-  include Cpc::FileParser
+RSpec.describe Cpc::MyStructuredData::FileParser do
+  include Cpc::MyStructuredData::FileParser
   let(:json_file_path) { 'spec/fixtures/sample.json' }
 
   it 'returns a Hash from a JSON file' do
