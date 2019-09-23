@@ -20,18 +20,24 @@ module Cpc
       camel_to_snake(str).sub('_', '')
     end
 
-    def match_scan_split(str, case_str, delimiter_str)
-      
-    end
-
-    def snake_case?(str)
-      scan = str.scan(/[a-z]/).join
-      split = str.split('_').join
+    def match_scan_split(str, delimiter_str, case_str = 'downcase')
+      scan = str.scan(/[a-z]/).join if case_str == 'downcase'
+      scan = str.scan(/[A-Z]/).join if case_str == 'upcase'
+      split = str.split(delimiter_str).join
       scan == split
     end
 
-    def kebab_case?(str)
+    def snake_case?(str)
+      match_scan_split(str, '_')
+    end
 
+    def kebab_case?(str)
+      match_scan_split(str, '-')
+    end
+
+    def camel_case?(str)
+      not_camel_case = snake_case?(str) || str[0] != str[0].downcase
+      not_camel_case ? false : snake_case?(camel_to_snake(str))
     end
 
 

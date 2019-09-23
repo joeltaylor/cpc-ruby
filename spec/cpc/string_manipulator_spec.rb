@@ -54,5 +54,19 @@ RSpec.describe Cpc::StringManipulator do
     expect(snake_case?('THIS_IS_A_STRING')).to eq(false)
   end
 
+  it 'should identify whether a string is kebab-case' do
+    expect(kebab_case?(snake)).to eq(false)
+    expect(kebab_case?(pascal)).to eq(false)
+    expect(kebab_case?(camel)).to eq(false)
+    expect(kebab_case?(kebab)).to eq(true)
+    expect(kebab_case?('THIS_IS_A_STRING')).to eq(false)
+  end
 
+  it 'should identify whether a string is camelCase' do
+    expect(camel_case?(snake)).to eq(false)
+    expect(camel_case?(pascal)).to eq(false)
+    expect(camel_case?(camel)).to eq(true)
+    expect(camel_case?(kebab)).to eq(false)
+    expect(camel_case?('THIS_IS_A_STRING')).to eq(false)
+  end
 end
