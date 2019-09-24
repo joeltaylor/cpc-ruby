@@ -5,6 +5,7 @@ module Cpc
   module Codewars
     module DryingPotatoes
       include Cpc::MyStructuredData::PleasingPrint
+      include Codewars
 
       def potatoes(p0, w0, p1)
         weight_total_pre = w0
