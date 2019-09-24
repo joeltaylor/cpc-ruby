@@ -10,10 +10,20 @@ module Cpc
         # expect(potatoes(82, 127, 80)).to eq(114)
         # expect(potatoes(93, 129, 91)).to eq(100)
 
-        water_weight_start = (w0 * p0) / 100
+        before_percentage_water = p0
+        before_percentage_dry = 100 - before_percentage_water
+        before_weight_total = w0
 
+        before_weight_wet = (before_weight_total * before_percentage_water) / 100
+        dry_weight = before_weight_total - before_weight_wet
+
+        after_percentage_water = p1
+        after_percentage_dry = 100 - after_percentage_water
+        after_weight_total = dry_weight * (100 / after_percentage_dry)
 
         binding.pry
+
+
 
         # All we eat is water and dry matter.
         # John bought potatoes: their weight is 100 kilograms. Potatoes contain water and dry matter.
