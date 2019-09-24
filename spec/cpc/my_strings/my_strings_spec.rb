@@ -69,4 +69,12 @@ RSpec.describe Cpc::MyStrings do
     expect(camel_case?(kebab)).to eq(false)
     expect(camel_case?('THIS_IS_A_STRING')).to eq(false)
   end
+
+  it 'should identify whether a string is PascalCase' do
+    expect(pascal_case?(snake)).to eq(false)
+    expect(pascal_case?(pascal)).to eq(true)
+    expect(pascal_case?(camel)).to eq(false)
+    expect(pascal_case?(kebab)).to eq(false)
+    expect(pascal_case?('THIS_IS_A_STRING')).to eq(false)
+  end
 end

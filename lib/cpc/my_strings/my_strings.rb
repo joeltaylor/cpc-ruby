@@ -39,5 +39,20 @@ module Cpc
       not_camel_case = snake_case?(str) || str[0] != str[0].downcase
       not_camel_case ? false : snake_case?(camel_to_snake(str))
     end
+
+    def pascal_case?(str)
+      downcase_ary = str.split("").select {|s| s.match?(/[a-z]/)}
+      upcase_ary = str.split("").select {|s| s.match?(/[A-Z]/)}
+
+      has_downcase = downcase_ary.count > 0
+      has_upcase = upcase_ary.count > 0
+      mixed_case = has_downcase && has_upcase
+
+      split_ary = str.gsub(/[A-Z]/) { |s| [ " ", s].join }.split
+      pascal_check_ary = split_ary.map {|s| s.match?(/[A-Z][a-z]*/) }.uniq
+      pascal_check = pascal_check_ary.count == 1 && pascal_check_ary.first == true
+
+      mixed_case ? pascal_check : false
+    end
   end
 end
