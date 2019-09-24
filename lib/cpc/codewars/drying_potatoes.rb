@@ -1,58 +1,40 @@
+require 'require_all'
+require_all 'lib'
+
 module Cpc
   module Codewars
     module DryingPotatoes
 
       def potatoes(p0, w0, p1)
-        # initial_water_f2 = p0
-        # initial_mass_int = w0
-        # final_water_f2 = p1
+        weight_total_pre = w0
+        weight_percent_water_pre = (p0 * 0.01)
+        weight_percent_water_post = (p1 * 0.01)
+        weight_percent_dry_post = (1 - weight_percent_water_post)
+        wet_weight_pre = weight_total_pre * weight_percent_water_pre
+        dry_weight = weight_total_pre - wet_weight_pre
+        wet_weight_post = (weight_percent_water_post * dry_weight) / weight_percent_dry_post
+        weight_total_post = dry_weight + wet_weight_post
 
-        # expect(potatoes(82, 127, 80)).to eq(114)
-        # expect(potatoes(93, 129, 91)).to eq(100)
+        workings_hsh = {
+          weight_total_pre: weight_total_pre,
+          weight_percent_water_pre: weight_percent_water_pre,
+          weight_percent_water_post: weight_percent_water_post,
+          weight_percent_dry_post: weight_percent_dry_post,
+          wet_weight_pre: wet_weight_pre,
+          dry_weight: dry_weight,
+          wet_weight_post: wet_weight_post,
+          weight_total_post: weight_total_post,
+          weight_total_post_rounded: weight_total_post.round(2)
+        }
 
-        before_percentage_water = p0
-        before_percentage_dry = 100 - before_percentage_water
-        before_weight_total = w0
+        puts "\nWORKINGS\n\n"
 
-        before_weight_wet = (before_weight_total * before_percentage_water) / 100
-        dry_weight = before_weight_total - before_weight_wet
+        workings_hsh.each do |k,v|
+          puts "#{k} = #{v}"
+        end
 
-        after_percentage_water = p1
-        after_percentage_dry = 100 - after_percentage_water
-        after_weight_total = dry_weight * (100 / after_percentage_dry)
-
-        binding.pry
-
-
-
-        # All we eat is water and dry matter.
-        # John bought potatoes: their weight is 100 kilograms. Potatoes contain water and dry matter.
-        # The water content is 99 percent of the total weight. He thinks they are too wet and puts them in an oven - at low temperature - for them to lose some water.
-        # At the output the water content is only 98%.
-        #
-        # What is the total weight in kilograms (water content plus dry matter) coming out of the oven?
-        # He finds 50 kilograms and he thinks he made a mistake: "So much weight lost for such a small change in water content!"
-        #
-        # Can you help him?
-        # Write function potatoes with
-        #
-        # int parameter p0 - initial percent of water-
-        # int parameter w0 - initial weight -
-        # int parameter p1 - final percent of water -
-        # potatoes should return the final weight coming out of the oven w1 truncated as an int.
-
-
-
-
-
-
-
-
-
+        weight_total_post.to_i
       end
-
-
-
     end
   end
 end
