@@ -4,6 +4,7 @@ require_all 'lib'
 module Cpc
   module Codewars
     module DryingPotatoes
+      include Cpc::MyStructuredData::PleasingPrint
 
       def potatoes(p0, w0, p1)
         weight_total_pre = w0
@@ -28,11 +29,7 @@ module Cpc
         }
 
         puts "\nWORKINGS\n\n"
-
-        workings_hsh.each do |k,v|
-          puts "#{k} = #{v}"
-        end
-
+        pleasing_print_hash(workings_hsh)
         weight_total_post.to_i
       end
     end
