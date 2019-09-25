@@ -8,8 +8,8 @@ module Cpc
       include Codewars
 
       def potatoes(p0, w0, p1)
-        weight_total_pre = w0
         weight_percent_water_pre = (p0 * 0.01).round(2)
+        weight_total_pre = w0
         weight_percent_water_post = (p1 * 0.01).round(2)
         weight_percent_dry_post = (1 - weight_percent_water_post).round(2)
         wet_weight_pre = (weight_total_pre * weight_percent_water_pre).round(2)
