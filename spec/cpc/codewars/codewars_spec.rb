@@ -7,8 +7,4 @@ RSpec.describe Cpc::Codewars do
     expect(hello_codewars).to eq('hello_codewars')
   end
 
-  it "should return weight of dried potato" do
-    expect(drying_potatoes.potatoes(82, 127, 80)).to eq(114)
-  end
-
 end
