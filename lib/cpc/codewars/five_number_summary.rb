@@ -15,6 +15,16 @@ module Cpc
         min_fr2 = ary.min.to_f.round(1)
         max_fr2 = ary.max.to_f.round(1)
 
+        if ary.count.odd?
+          middle_index = (ary.count * 0.5).round
+          median = ary[middle_index - 1]
+        else
+
+        end
+
+        median = ary.count.odd? ? ary.index((ary.count * 0.5))
+
+
         q2_fr2 = (ary.sum * 0.5).to_f.round(1)
         quarter_fr2 = ((q2_fr2 - ary.min) * 0.5).to_f.round(1)
         q1_fr2 = (q2_fr2 - quarter_fr2).to_f.round(1)
