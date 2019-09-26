@@ -34,5 +34,4 @@ gem 'webdrivers'
 
 group :development do
   gem 'guard', require: false
-  gem 'guard-cucumber'
 end

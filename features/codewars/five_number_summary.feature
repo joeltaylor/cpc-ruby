@@ -5,6 +5,12 @@ Feature: Five Number Summary
   Median (Second Quartile; Q2)
   Third Quartile (Q3)
   Maximum
+  # Median
+  For example, let A = [1, 2, 3, 4, 5] and B = [1, 2, 3, 4, 5, 6]. The median of A is 3 and the median of B is (3 + 4) / 2.0 = 3.5.
+  Split the list of observations in two halves, L and U. If n is odd, include the median in both halves.
+  # Q1 and Q3
+  Q1 is the median of L and Q3 is the median of U.
+  For example, let A and B be as above. A can then be split into L_A = [1, 2, 3] and U_A = [3, 4, 5]. Q1 and Q3 of A are then 2 and 4, respectively. B splits into L_B = [1, 2, 3] and U_B = [4, 5, 6], and Q1 and Q3 of B are 2 and 5.
 
   Scenario Outline:
     Given I input five numbers "<input_numbers>"
