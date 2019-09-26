@@ -23,7 +23,6 @@ module Cpc
             total_int -= (v * n)
           end
         end
-
         fuel_hsh
       end
     end

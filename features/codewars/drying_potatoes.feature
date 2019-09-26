@@ -10,3 +10,4 @@ Scenario Outline:
   Examples:
   | initial_water_percent | initial_weight | final_water_percent | final_weight |
   | 82                    | 127            | 80                  | 114          |
+  | 99                    | 100            | 98                  | 50           |
