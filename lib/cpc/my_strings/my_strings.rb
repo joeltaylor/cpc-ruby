@@ -1,5 +1,9 @@
 module Cpc
   module MyStrings
+    def hello_my_strings
+      'hello_my_strings'
+    end
+    
     def mysql_query(sql_template_filepath, sql_params_hsh)
       sql_template_txt = File.read(sql_template_filepath)
       sql_params_hsh.each { |k, v| sql_template_txt.gsub!(k.to_s.upcase, v) }

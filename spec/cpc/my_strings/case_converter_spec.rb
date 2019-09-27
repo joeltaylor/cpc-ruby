@@ -11,6 +11,10 @@ RSpec.describe Cpc::MyStrings::CaseConverter do
   let(:capitalized) { "This is a string" }
   let(:title) { "This Is A String" }
 
+  it 'should inherit hello_my_strings' do
+    expect(hello_my_strings).to eq(hello_my_strings)
+  end
+
   it "should convert kebab-case to snake_case" do
     expect(kebab_to_snake(kebab)).to eq(snake)
   end

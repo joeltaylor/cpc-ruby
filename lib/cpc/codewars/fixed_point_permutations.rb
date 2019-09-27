@@ -50,7 +50,6 @@ module Cpc
 
 
         tidied = special_perm_ary.sort.uniq
-        binding.pry
 
         if length_int > haps_int
           0

@@ -1,5 +1,9 @@
 module Cpc
   module TimeStamp
+    def hello_time_stamp
+      'hello_time_stamp'
+    end
+
     def convert_to_yyyymmdd_hhmmss(time_obj)
       date = time_obj.strftime("%Y-%m-%d")
       time = time_obj.strftime("%H-%M-%S")
