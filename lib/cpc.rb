@@ -1,4 +1,4 @@
-require "cpc/version"
+require_relative "cpc/version"
 require 'rainbow'
 require 'time'
 require 'require_all'
