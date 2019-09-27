@@ -7,3 +7,4 @@ include Cpc::Codewars::Order
 include Cpc::Codewars::CamelCase
 include Cpc::Codewars::FiveNumberSummary
 include Cpc::Codewars::MinecraftFurnaceFuel
+include Cpc::Codewars::FixedPointPermutations
